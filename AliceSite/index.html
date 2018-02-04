@@ -16,7 +16,7 @@
     <header>
         <div class="wrapper">
             <div>
-                <h1 onclick="pageTurner(0)">Wonderland</h1>
+                <h1 onclick="gotoPage(0)">Wonderland</h1>
             </div>
             <div>
                 <nav>
@@ -39,6 +39,8 @@
         </div>
     </header>
     <section>
+        <a id="prev" onclick="pageTurner(-1)">&#10094;</a>
+        <a id="next" onclick="pageTurner(1)">&#10095;</a>
         <div class="wrapper">
             <div class="page">
                 <div class="center">
@@ -47,10 +49,14 @@
                     <h2>IN WONDERLAND</h2>
 
                     <p>By Lewis Carroll</p>
-                    <hr>
+                </div>
+            </div>
+
+            <div class="page">
+                <div class="center">
 
                     <p>
-                        <a href="#Chapter 1" onclick="pageTurner(1)">Chapter 1: Down the Rabbit-Hole</a>
+                        <a href="#Chapter 1" onclick="gotoPage(2)">Chapter 1: Down the Rabbit-Hole</a>
                     </p>
                     <p>
                         <a href="#Chapter chNum">Chapter 2: The Pool of Tears</a>
@@ -85,20 +91,29 @@
                     <p>
                         <a href="#Chapter chNum">Chapter 12: Alice’s Evidence</a>
                     </p>
+
                 </div>
             </div>
-
             <div class="page">
-                <a name="Chapter 1" id="Chapter 1"> </a>
-                <img src="img/1book1.png">
-                <h2>Chapter 1: Down the Rabbit-Hole</h2>
-
                 <div class="pagetxt">
+                    <a name="Chapter 1" id="Chapter 1"> </a>
+                    <img src="img/1book1.png">
+                    <h2>Chapter 1: Down the Rabbit-Hole</h2>
+
+
                     <p>
                         Alice was beginning to get very tired of sitting by her sister on the bank, and of having nothing to do: once or twice she
                         had peeped into the book her sister was reading, but it had no pictures or conversations in it, &lsquo;and
                         what is the use of a book,&rsquo; thought Alice &lsquo;without pictures or conversations?&rsquo;
                     </p>
+                </div>
+            </div>
+
+
+
+
+            <div class="page">
+                <div class="pagetxt">
                     <p>
                         So she was considering in her own mind (as well as she could, for the hot day made her feel very sleepy and stupid), whether
                         the pleasure of making a daisy-chain would be worth the trouble of getting up and picking the daisies,
@@ -118,16 +133,11 @@
                     <p>
                         In another moment down went Alice after it, never once considering how in the world she was to get out again.
                     </p>
-
-
-
-
                 </div>
-
-
-
-
             </div>
+
+
+
         </div>
     </section>
     <footer>
