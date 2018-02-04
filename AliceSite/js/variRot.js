@@ -8,6 +8,19 @@ function rotateNav() {
         navs[i].style.msTransform = "rotate(" + rando + "deg)";
         navs[i].style.transform = "rotate(" + rando + "deg)";
     }
+    pageTurner(0);
+}
+
+function pageTurner(currentPage) {
+    
+    var pages = document.getElementsByClassName("page");
+
+    
+    for (var i = 0; i < pages.length; i++) {
+        pages[i].style.display = "none";
+
+    }
+    pages[currentPage].style.display ="block";
 
 }
 

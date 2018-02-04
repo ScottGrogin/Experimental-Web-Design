@@ -11,6 +11,9 @@ a{
 p{
     font-size: 13pt;
 }
+img{
+    width:100%;
+}
 body {
     font-family: 'Alice', serif;
     color: #334444;
@@ -20,6 +23,7 @@ body {
 h1{
     color: #ddc0de;
     font-size:35pt;
+    cursor: pointer;
 }
 h2{
     font-size:25pt;
@@ -48,7 +52,7 @@ li a {
     color: #ddc0de;
 }
 
-.wraper {
+.wrapper {
     max-width: 1000px;
     margin: 0 auto 0 auto;
 }
@@ -58,6 +62,7 @@ li a {
 .page{
     width:50%;
     margin:auto;
+    
 
 }
 
@@ -66,7 +71,7 @@ li a {
     text-align: center;
 }
 
-header .wraper {
+header .wrapper {
     display: flex;
     flex-direction: row;
     align-items: baseline;
