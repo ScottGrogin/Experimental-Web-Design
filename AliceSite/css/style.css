@@ -16,7 +16,9 @@ p {
 }
 
 img {
-    width: 90%;
+    /* max-width: 90%; */
+    max-height:400px;
+
 }
 
 body {
@@ -72,13 +74,17 @@ li a {
 
 .page {
     width: 50%;
+    height:700px;
     margin: 50px auto 40px auto;
     padding: 20px 40px 20px 40px;
     border: 10px double #334444;
+   
 }
 
 .center {
     text-align: center;
+    
+    
 }
 
 header .wrapper {
