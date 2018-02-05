@@ -1,5 +1,18 @@
 var currentPage = 0;
 
+function init() {
+    var navs = document.querySelectorAll("nav li");
+
+    for (var i = 0; i < navs.length; i++) {
+        rando = (Math.random() * 60) - 30;
+
+        navs[i].style.WebkitTransform = "rotate(" + rando + "deg)";
+        navs[i].style.msTransform = "rotate(" + rando + "deg)";
+        navs[i].style.transform = "rotate(" + rando + "deg)";
+        
+    }
+    gotoPage(0);
+}
 function rotateNav() {
     var navs = document.querySelectorAll("nav li");
 
@@ -9,8 +22,9 @@ function rotateNav() {
         navs[i].style.WebkitTransform = "rotate(" + rando + "deg)";
         navs[i].style.msTransform = "rotate(" + rando + "deg)";
         navs[i].style.transform = "rotate(" + rando + "deg)";
-        gotoPage(7);
+        
     }
+
 }
 
 function pageTurner(increment) {
@@ -29,6 +43,7 @@ function pageTurner(increment) {
 
     }
     pages[currentPage].style.display = "block";
+    rotateNav()
 
 }
 window.onkeydown = function pageTurnerKey(e) {
@@ -54,6 +69,8 @@ window.onkeydown = function pageTurnerKey(e) {
 
     }
     pages[currentPage].style.display = "block";
+    console.log(currentPage);
+    rotateNav()
 
 }
 
@@ -67,6 +84,8 @@ function gotoPage(pageNum) {
 
     }
     pages[currentPage].style.display = "block";
+    
+    rotateNav()
 }
 
-window.onload = rotateNav;
+window.onload = init;
