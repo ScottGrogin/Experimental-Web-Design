@@ -9,7 +9,7 @@ function rotateNav() {
         navs[i].style.WebkitTransform = "rotate(" + rando + "deg)";
         navs[i].style.msTransform = "rotate(" + rando + "deg)";
         navs[i].style.transform = "rotate(" + rando + "deg)";
-        gotoPage(3);
+        gotoPage(7);
     }
 }
 

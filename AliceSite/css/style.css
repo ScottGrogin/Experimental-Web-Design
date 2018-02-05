@@ -11,7 +11,7 @@ a {
     color: #334444;
 }
 
-p {
+p,pre {
     font-size: 14pt;
 }
 
@@ -26,6 +26,7 @@ body {
     color: #334444;
     background-color: #ddc0de;
     margin: 0;
+    overflow-x: hidden;
 }
 
 h1 {
@@ -76,7 +77,7 @@ li a {
     width: 50%;
     height:700px;
     margin: 50px auto 40px auto;
-    padding: 20px 40px 20px 40px;
+    padding: 3px 40px 40px 40px;
     border: 10px double #334444;
    
 }
@@ -90,6 +91,7 @@ li a {
 header .wrapper {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     align-items: baseline;
     justify-content: center;
 }
@@ -112,4 +114,116 @@ header .wrapper {
     left: 0;
     margin-left: 20px;
     cursor: pointer;
+}
+@media screen and (max-width:997px){
+    .page {
+        width: 50%;
+        height:800px;
+        margin: 50px auto 40px auto;
+        padding: 3px 40px 40px 40px;
+        border: 10px double #334444;
+       
+    }
+    
+}
+@media screen and (max-width:899px){
+    .page {
+        width: 60%;
+        height:800px;
+        margin: 50px auto 40px auto;
+        padding: 3px 40px 40px 40px;
+        border: 10px double #334444;
+       
+    }
+    
+}
+@media screen and (max-width:739px){
+    .page {
+        width: 70%;
+        height:800px;
+        margin: 50px auto 40px auto;
+        padding: 3px 40px 40px 40px;
+        border: 10px double #334444;
+       
+    }
+    
+}
+@media screen and (max-width:637px){
+    .page {
+        width: 70%;
+        height:900px;
+        margin: 50px auto 40px auto;
+        padding: 3px 40px 40px 40px;
+        border: 10px double #334444;
+       
+    }
+    
+}
+@media screen and (max-width:569px){
+    .page {
+        width: 70%;
+        height:1100px;
+        margin: 50px auto 40px auto;
+        padding: 3px 40px 40px 40px;
+        border: 10px double #334444;
+       
+    }
+
+    
+}
+
+@media screen and (max-width:469px){
+    .page {
+        width: 70%;
+        height:1300px;
+        margin: 50px auto 40px auto;
+        padding: 3px 40px 40px 40px;
+        border: 10px double #334444;
+       
+    }
+    
+}
+@media screen and (max-width:395px){
+    .page {
+        width: 70%;
+        height:1400px;
+        margin: 50px auto 40px auto;
+        padding: 3px 40px 40px 40px;
+        border: 10px double #334444;
+       
+    }
+    
+}
+@media screen and (max-width:375px){
+    .page {
+        width: 70%;
+        height:1500px;
+        margin: 50px auto 40px auto;
+        padding: 0px 0px 0px 0px;
+        border: 0px double #334444;
+       
+    }
+    
+}
+@media screen and (max-width:346px){
+    .page {
+        width: 70%;
+        height:1600px;
+        margin: 50px auto 40px auto;
+        padding: 0px 0px 0px 0px;
+        border: 0px double #334444;
+       
+    }
+    
+}
+@media screen and (max-width:332px){
+    .page {
+        width: 70%;
+        height:1700px;
+        margin: 50px auto 40px auto;
+        padding: 0px 0px 0px 0px;
+        border: 0px double #334444;
+       
+    }
+    
 }
