@@ -5,7 +5,10 @@ html {
 hr {
     border-color: #334444;
 }
-
+pre{
+    
+    margin: auto;
+}
 button {
     font-family: 'Alice', serif;
     text-decoration: none;
@@ -16,8 +19,7 @@ a {
     color: #334444;
 }
 
-p,
-pre {
+p{
     font-size: 14pt;
 }
 
@@ -85,6 +87,7 @@ li a {
     height: 700px;
     margin: 50px auto 40px auto;
     padding: 3px 40px 40px 40px;
+    border: 10px double #334444;
 }
 
 .center {
