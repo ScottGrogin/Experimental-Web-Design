@@ -9,10 +9,12 @@ function init() {
         navs[i].style.WebkitTransform = "rotate(" + rando + "deg)";
         navs[i].style.msTransform = "rotate(" + rando + "deg)";
         navs[i].style.transform = "rotate(" + rando + "deg)";
-        
+
     }
+
     gotoPage(0);
 }
+
 function rotateNav() {
     var navs = document.querySelectorAll("nav li");
 
@@ -22,7 +24,7 @@ function rotateNav() {
         navs[i].style.WebkitTransform = "rotate(" + rando + "deg)";
         navs[i].style.msTransform = "rotate(" + rando + "deg)";
         navs[i].style.transform = "rotate(" + rando + "deg)";
-        
+
     }
 
 }
@@ -43,6 +45,7 @@ function pageTurner(increment) {
 
     }
     pages[currentPage].style.display = "block";
+    displayCurrentPage(currentPage);
     rotateNav()
 
 }
@@ -53,6 +56,10 @@ window.onkeydown = function pageTurnerKey(e) {
     }
     if (keyCode == 39) {
         currentPage += 1;
+    }
+    if (keyCode == 13) {
+        document.getElementById("btn").click();
+        return;
     }
 
     var pages = document.getElementsByClassName("page");
@@ -69,7 +76,7 @@ window.onkeydown = function pageTurnerKey(e) {
 
     }
     pages[currentPage].style.display = "block";
-    console.log(currentPage);
+    displayCurrentPage(currentPage);
     rotateNav()
 
 }
@@ -84,8 +91,22 @@ function gotoPage(pageNum) {
 
     }
     pages[currentPage].style.display = "block";
-    
+    displayCurrentPage(currentPage);
+
     rotateNav()
 }
 
+function pageFind() {
+    var pages = document.getElementsByClassName("page");
+    var pgNum = document.getElementById("input").value;
+    console.log(pgNum);
+    if (parseInt(pgNum,10) < pages.length && parseInt(pgNum,10) >= 0 && !(isNaN(parseInt(pgNum)))) {
+        gotoPage(parseInt(pgNum,10));
+    }
+
+}
+
+function displayCurrentPage(pageNum) {
+    document.getElementById("pageNumber").innerHTML = "Current Page: " + pageNum;
+}
 window.onload = init;
