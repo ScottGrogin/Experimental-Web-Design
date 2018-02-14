@@ -1,3 +1,7 @@
+
+// TODO Format Glitcher
+// Page num is bounds for rotation
+// Page num is likelyhood of page width changing
 var currentPage = 0;
 
 function init() {
