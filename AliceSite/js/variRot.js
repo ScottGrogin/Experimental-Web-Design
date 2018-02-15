@@ -19,6 +19,7 @@ function rotateNav() {
 }
 
 function reset() {
+    var paragraph = document.getElementsByTagName("p");
     var rando = 0;
     for (var i = 0; i < paragraph.length; i++) {
         paragraph[i].style.textDecoration = "none";
