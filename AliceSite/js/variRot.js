@@ -37,25 +37,62 @@ function reset() {
 }
 
 function weirdify() {
+    var pages = document.getElementsByClassName("page");
     var paragraph = document.getElementsByTagName("p");
-    var rando = (Math.random() * 15) - 7;
-    for (var i = 0; i < paragraph.length; i++) {
-        // paragraph[i].style.textDecoration = "line-through";
-        // paragraph[i].style.textAlign = "right";
-        // paragraph[i].style.textTransform = "capitalize";
-
-
-
-        // paragraph[i].style.letterSpacing = "0pt";
-        // paragraph[i].style.lineHeight = "100%";
-
-        // //var rando = (Math.random() * 15) - 7;
-
-        // paragraph[i].style.WebkitTransform = "rotate(" + rando + "deg)";
-        // paragraph[i].style.msTransform = "rotate(" + rando + "deg)";
-        // paragraph[i].style.transform = "rotate(" + rando + "deg)";
+    var weirdPct = currentPage / pages.length;
+    
+    if (Math.random() < weirdPct) {
+        var effectSelector = Math.floor(Math.random() * 7);
+        
+        switch (effectSelector) {
+            case 0:
+                for (var i = 0; i < paragraph.length; i++) {
+                    paragraph[i].style.textDecoration = "line-through";
+                }
+                break;
+            case 1:
+                for (var i = 0; i < paragraph.length; i++) {
+                    paragraph[i].style.textAlign = "right";
+                }
+                break;
+            case 2:
+                for (var i = 0; i < paragraph.length; i++) {
+                    paragraph[i].style.letterSpacing = "-1.5pt";
+                }
+                break;
+            case 3:
+                for (var i = 0; i < paragraph.length; i++) {
+                    paragraph[i].style.letterSpacing = "2pt";
+                }
+                break;
+            case 4:
+                for (var i = 0; i < paragraph.length; i++) {
+                    paragraph[i].style.lineHeight = "70%";
+                }
+                break;
+            case 5:
+                for (var i = 0; i < paragraph.length; i++) {
+                    var rando = (Math.random() * 15) - 7;
+                    paragraph[i].style.WebkitTransform = "rotate(" + rando + "deg)";
+                    paragraph[i].style.msTransform = "rotate(" + rando + "deg)";
+                    paragraph[i].style.transform = "rotate(" + rando + "deg)";
+                }
+                break;
+            case 6:
+                var rando = (Math.random() * 15) - 7;
+                for (var i = 0; i < paragraph.length; i++) {
+                    paragraph[i].style.WebkitTransform = "rotate(" + rando + "deg)";
+                    paragraph[i].style.msTransform = "rotate(" + rando + "deg)";
+                    paragraph[i].style.transform = "rotate(" + rando + "deg)";
+                }
+                break;
+            default:
+                console.log("Something went wrong with weird effect selection");
+        }
 
     }
+
+
 }
 
 function init() {
@@ -128,7 +165,7 @@ window.onkeydown = function pageTurnerKey(e) {
     reset();
     rotateNav();
     weirdify();
-    
+
 
 }
 
