@@ -4,6 +4,7 @@
 
 var currentPage = 0;
 
+//Rotates the text in the nav.
 function rotateNav() {
     var navs = document.querySelectorAll("nav li");
 
@@ -18,6 +19,8 @@ function rotateNav() {
 
 }
 
+
+// Returns text to normal formating.
 function reset() {
     var paragraph = document.getElementsByTagName("p");
     var rando = 0;
@@ -40,14 +43,16 @@ function reset() {
     }
 }
 
+//This method decides when and how to glitch text.
 function weirdify() {
     var pages = document.getElementsByClassName("page");
     var paragraph = document.getElementsByTagName("p");
-    var weirdPct = currentPage / pages.length;
+
+    var weirdPct = currentPage / pages.length; // decides how likely it is for text to be glitched.
 
     if (Math.random() < weirdPct) {
         var effectSelector = Math.floor(Math.random() * 7);
-
+        // decides what glitch effect will happen.
         switch (effectSelector) {
             case 0:
                 for (var i = 0; i < paragraph.length; i++) {
