@@ -132,8 +132,12 @@ function init() {
 
     }
     reset();
-
-    gotoPage(0);
+    try {
+        gotoPage(loadPage());
+    } catch (error) {
+        gotoPage(0);
+    }
+ 
 }
 
 
@@ -155,6 +159,7 @@ function pageTurner(increment) {
     pages[currentPage].style.display = "block";
     loadImage(currentPage);
     displayCurrentPage(currentPage);
+    savePage(currentPage);
     reset();
     rotateNav();
     weirdify();
@@ -189,6 +194,7 @@ window.onkeydown = function pageTurnerKey(e) {
     pages[currentPage].style.display = "block";
     loadImage(currentPage);
     displayCurrentPage(currentPage);
+    savePage(currentPage);
     reset();
     rotateNav();
     weirdify();
@@ -208,6 +214,7 @@ function gotoPage(pageNum) {
     pages[currentPage].style.display = "block";
     loadImage(currentPage);
     displayCurrentPage(currentPage);
+    savePage(currentPage);
     reset();
     rotateNav();
     weirdify();
@@ -404,6 +411,15 @@ function loadImage(pagenum) {
 
     }
 
+}
+
+function savePage(pagenum){
+    document.cookie ="pageNum="+pagenum;
+    console.log(document.cookie);
+}
+function loadPage(){
+    return  decodeURIComponent(document.cookie);
+    
 }
 
 window.onload = init;
