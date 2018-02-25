@@ -1,8 +1,9 @@
 // TODO Format Glitcher
 // Page num is bounds for rotation
 // Page num is likelyhood of page width changing
+var currentPage=0
 
-var currentPage = 0;
+
 
 //Rotates the text in the nav.
 function rotateNav() {
@@ -121,6 +122,11 @@ function weirdify() {
 }
 
 function init() {
+    try {
+        currentPage = loadPage();
+    } catch (error) {
+        currentPage = 0;
+    }
     var navs = document.querySelectorAll("nav li");
 
     for (var i = 0; i < navs.length; i++) {
@@ -132,11 +138,7 @@ function init() {
 
     }
     reset();
-    try {
-        gotoPage(loadPage());
-    } catch (error) {
-        gotoPage(0);
-    }
+    gotoPage(currentPage);
  
 }
 
@@ -223,7 +225,7 @@ function gotoPage(pageNum) {
 function pageFind() {
     var pages = document.getElementsByClassName("page");
     var pgNum = document.getElementById("input").value;
-    console.log(pgNum);
+ 
     if (parseInt(pgNum, 10) < pages.length && parseInt(pgNum, 10) >= 0 && !(isNaN(parseInt(pgNum)))) {
         gotoPage(parseInt(pgNum, 10));
     }
@@ -407,7 +409,7 @@ function loadImage(pagenum) {
 
 
         default:
-            console.log("nothing to load");
+            
 
     }
 
@@ -418,7 +420,9 @@ function savePage(pagenum){
     console.log(document.cookie);
 }
 function loadPage(){
-    return  decodeURIComponent(document.cookie);
+    
+    
+    return parseInt(document.cookie.split("=")[1]);
     
 }
 
